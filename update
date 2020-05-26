@@ -63,6 +63,7 @@ then
     echo "--[ Testing disk access speed ]--"
     echo "---------------------------------"
     sudo hdparm -tT /dev/sda1
+    sudo hdparm -tT /dev/sdb1
   fi
   echo "--------------------------------"
   echo "--[ Run rkhunter scan? (y/n) ]--"
