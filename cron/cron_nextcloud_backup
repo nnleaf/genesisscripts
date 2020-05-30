@@ -1,0 +1,12 @@
+#!/bin/bash
+#     ////     //  ////     //
+#    // //    //  // //    //
+#   //  //   //  //  //   //
+#  //   //  //  //   //  //
+# //    // //  //    // //
+#//     ////  //     ////
+#
+#20200530 - Created to sync files from nextcloud to vault documents daily
+#
+mount -a
+rsync -avh --progress --delete --stats --ignore-existing --ignore-errors -s -e "ssh" --rsync-path="sudo rsync" /downloads/nextcloud/files/. /vault/n1/Files/Documents/
