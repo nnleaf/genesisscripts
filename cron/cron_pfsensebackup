@@ -9,4 +9,4 @@
 #20200601 - Created script to backup PFSense configuration file
 #20200620 - Moved to Genesis
 #
-scp nn@192.168.1.1:/cf/conf/config.xml /vault/n1/Files/NNServer/PFSense/Configuration/config-PFSense.localdomain-"`date +%Y%m%d%H%M%S`".xml
+scp nn@192.168.1.1:/cf/conf/config.xml /nnvault/Files/NNServer/PFSense/Configuration/config-PFSense.localdomain-"`date +%Y%m%d%H%M%S`".xml
