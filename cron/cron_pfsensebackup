@@ -9,6 +9,4 @@
 #20200601 - Created script to backup PFSense configuration file
 #20200620 - Moved to Genesis
 #
-sudo mount -t cifs //10.0.100.10/Backup /nnvault/backup -o credentials=/home/nn/.smbnn,iocharset=utf8,x-systemd.automount,file_mode=0777,dir_mode=0777,noperm
-scp nn@192.168.1.1:/cf/conf/config.xml /nnvault/backup/NNServer/PFSense/Configuration/config-PFSense.localdomain-"`date +%Y%m%d%H%M%S`".xml
-sudo umount -t cifs //10.0.100.10/Backup
+scp nn@192.168.1.1:/cf/conf/config.xml /nnvault/Files/NNServer/PFSense/Configuration/config-PFSense.localdomain-"`date +%Y%m%d%H%M%S`".xml
