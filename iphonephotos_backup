@@ -1,0 +1,23 @@
+#!/bin/bash
+#     ////     //  ////     //
+#    // //    //  // //    //
+#   //  //   //  //  //   //
+#  //   //  //  //   //  //
+# //    // //  //    // //
+#//     ////  //     ////
+#
+#20201230 - Created to backup iPhone photos from Plex
+#
+sudo mount -a
+echo "-----------------------------"
+echo "--[ Dry-Run iPhone Photos ]--"
+echo "-----------------------------"
+sudo rsync -avnh --progress --delete --stats --ignore-errors -s -e "ssh" --rsync-path="sudo rsync" /nnvault/Media/CameraPhotos/iPhoneXS/. /nnvault/Files/Pictures/Phone_Camera/Plex_iPhoneXS/.
+echo "-------------------------------------------"
+echo "--[ Run Real iPhone Photos Rsync? (y/n) ]--"
+echo "-------------------------------------------"
+read -p ""
+if [[ $REPLY =~ ^[Yy]$ ]]
+then
+  sudo rsync -avh --progress --delete --stats --ignore-errors -s -e "ssh" --rsync-path="sudo rsync" /nnvault/Media/CameraPhotos/iPhoneXS/. /nnvault/Files/Pictures/Phone_Camera/Plex_iPhoneXS/.
+fi

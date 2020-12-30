@@ -1,0 +1,13 @@
+#!/bin/bash
+#     ////     //  ////     //
+#    // //    //  // //    //
+#   //  //   //  //  //   //
+#  //   //  //  //   //  //
+# //    // //  //    // //
+#//     ////  //     ////
+#
+# 20201230 - Created to backup iPhone photos from Plex
+#          - Adopted from original script as a cronjob
+#
+mount -a
+rsync -avh --progress --delete --stats --ignore-errors -s -e "ssh" --rsync-path="sudo rsync" /nnvault/Media/CameraPhotos/iPhoneXS/. /nnvault/Files/Pictures/Phone_Camera/Plex_iPhoneXS/.
