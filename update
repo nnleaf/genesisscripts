@@ -11,6 +11,7 @@
 # 20200319 - Added testing disk access speed
 #            https://www.debian.org/doc/manuals/debian-reference/ch09.en.html
 # 20200515 - Refreshed look, added Debian Versioning
+# 20220118 - Updated script
 #
 echo "------------------------------------------"
 echo "--[ Debian Version $(cat /etc/debian_version), Update? (y/n) ]--"
@@ -18,18 +19,22 @@ echo "------------------------------------------"
 read -p ""
 if [[ $REPLY =~ ^[Yy]$ ]]
 then
-  echo "---------------- -------"
+  echo "-----------------------"
   echo "--[ Updating Debian ]--"
   echo "-----------------------"
-  sudo apt-get update
+  sudo apt update
   echo "------------------------"
   echo "--[ Upgrading Debian ]--"
   echo "------------------------"
-  sudo apt-get upgrade
+  sudo apt upgrade
   echo "-------------------------"
   echo "--[ Running autoclean ]--"
   echo "-------------------------"
-  sudo apt-get autoclean
+  sudo apt autoclean
+  echo "--------------------------"
+  echo "--[ Running autoremove ]--"
+  echo "--------------------------"
+  sudo apt autoremove
 fi
 echo "------------------------"
 echo "--[ Updating mlocate ]--"
