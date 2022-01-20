@@ -11,4 +11,4 @@
 #
 #Delete backups older than 30 days
 find /nnvault/Backup/NNServer/PFSense/Configuration/ -mtime +30 -exec rm -f {} +
-scp nn@192.168.1.1:/cf/conf/config.xml /nnvault/Backup/NNServer/PFSense/Configuration/config-PFSense.localdomain-"`date '+%Y-%m-%d_%H-%M-%S'`".xml
+scp nn@192.168.1.1:/cf/conf/config.xml /nnvault/Backup/NNServer/PFSense/Configuration/config-PFSense.localdomain-"`date +%Y%m%d%H%M%S`".xml
